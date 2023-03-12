@@ -26,25 +26,19 @@ class ViewController: UIViewController {
         let number1 = Float(textField1.text ?? "") ?? 0
         let number2 = Float(textField2.text ?? "") ?? 0
         
-        //計算方法の定義
-        let zeroNumber = number1 + number2
-        let firstNumber = number1 - number2
-        let secondNumber = number1 * number2
-        let thirdNumber = number1 / number2
-        
         //計算の分岐
         switch segmentedControl.selectedSegmentIndex {
         case 0:
-            label.text = "\(zeroNumber)"
+            label.text = "\(number1 + number2)"
         case 1:
-            label.text = "\(firstNumber)"
+            label.text = "\(number1 - number2)"
         case 2:
-            label.text = "\(secondNumber)"
+            label.text = "\(number1 * number2)"
         case 3:
             if number2 == 0 {
                 label.text = "計算できません"
             } else {
-                label.text = "\(thirdNumber)"
+                label.text = "\(number1 / number2)"
             }
         default:
             label.text = ""
